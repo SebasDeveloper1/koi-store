@@ -1,0 +1,33 @@
+@import '../../styles/global';
+
+.new-passwd {
+  display: grid;
+  place-items: center;
+  inline-size: 100vw;
+  block-size: 100vh;
+}
+
+.new-passwd__form-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  inline-size: 90%;
+  max-inline-size: 400px;
+  padding: 26px 0;
+}
+
+.new-passwd__logo {
+  inline-size: 190px;
+  margin-block-end: 40px;
+  justify-self: center;
+  display: block;
+}
+
+.new-passwd__texts-container {
+  margin-block-end: 32px;
+}
+
+@media (min-width: 768px) {
+  .new-passwd__logo {
+    display: none;
+  }
+}

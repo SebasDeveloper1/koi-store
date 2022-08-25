@@ -1,0 +1,19 @@
+@import '../../styles/global';
+
+.primary-button {
+  padding: 12px 32px;
+  font-size: $font-size-md;
+  font-weight: $font-weight-text2;
+  color: $color-light-1;
+  background-color: $color-medium-3;
+  border: none;
+  border-radius: $border-radius-size;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, top 0.15s ease-in-out,
+    left 0.15s ease-in-out;
+}
+
+.primary-button:hover {
+  background-color: $color-dark-1;
+}

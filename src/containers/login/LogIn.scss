@@ -1,0 +1,29 @@
+@import '../../styles/global';
+
+.login {
+  display: grid;
+  place-items: center;
+  inline-size: 100vw;
+  block-size: 100vh;
+}
+
+.login__form-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  inline-size: 90%;
+  max-inline-size: 400px;
+  padding: 26px 0;
+}
+
+.login__logo {
+  inline-size: 190px;
+  margin-block-end: 40px;
+  justify-self: center;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .login__logo {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../styles/global';
+
+.primary-link {
+  font-size: $font-size-md;
+  font-weight: $font-weight-text2;
+  color: $color-medium-3;
+  cursor: pointer;
+}
+
+.align-center {
+  text-align: center;
+}

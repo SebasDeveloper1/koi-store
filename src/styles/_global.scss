@@ -1,0 +1,41 @@
+@import './vars';
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $font-size-md;
+  font-family: $font-family-text;
+  font-weight: $font-weight-text1;
+  line-height: 1.5;
+  color: $color-dark-2;
+  background-color: $color-light-1;
+}
+
+body::-webkit-scrollbar {
+  inline-size: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: $color-medium-1;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $color-medium-3;
+  border-radius: 4px;
+}
+
+h3 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-text2;
+}
+
+h4 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-text1;
+}

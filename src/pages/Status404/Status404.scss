@@ -1,0 +1,20 @@
+@import '../../styles/global';
+
+.status-404 {
+  display: grid;
+  grid-template-columns: auto;
+  place-items: center;
+  inline-size: 100vw;
+  block-size: 100vh;
+  background-image: $color-background-404;
+}
+
+.container-404 {
+  inline-size: 90%;
+  text-align: center;
+}
+
+.container-404__image {
+  inline-size: 50%;
+  max-inline-size: 500px;
+}
