@@ -1,0 +1,42 @@
+@import '../../styles/global';
+
+.search-container {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  place-items: center;
+  border-radius: $border-radius-size;
+  background-color: $color-light-2;
+}
+
+.search__icon {
+  grid-column: 1 / 2;
+  margin: 0 12px;
+  font-size: $icon-size-lg;
+  color: $color-medium-1;
+}
+.search__input {
+  grid-column: 2 / 3;
+  inline-size: 100%;
+  padding: 12.5px 0 12.5px 16px;
+  font-size: $font-size-md;
+  font-weight: $font-weight-text2;
+  color: $color-medium-2;
+  border: none;
+  background-color: transparent;
+}
+
+.search__input:focus {
+  outline: none;
+}
+
+.search__input::placeholder {
+  font-family: $font-family-text;
+  color: $color-medium-1;
+}
+
+@media (min-width: 768px) {
+  .search__input {
+    font-size: $font-size-lg;
+  }
+}

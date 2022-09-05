@@ -1,0 +1,17 @@
+@import '../../styles/global';
+
+.tertiary-title {
+  font-family: $font-family-titles;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-title2;
+}
+
+.tertiary-title-light {
+  color: $color-light-2;
+}
+
+@media (min-width: 768px) {
+  .tertiary-title {
+    font-size: $font-size-lg2;
+  }
+}

@@ -17,3 +17,15 @@
 .primary-button:hover {
   background-color: $color-dark-1;
 }
+
+.primary-button__icon {
+  margin-inline-end: 8px;
+  font-size: inherit;
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .primary-button {
+    font-size: $font-size-lg;
+  }
+}

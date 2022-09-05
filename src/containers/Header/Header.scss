@@ -48,7 +48,7 @@
   object-position: center;
 }
 
-.nav-container .nav__btn-shop-container {
+.nav__btn-shop-container {
   grid-column: 3 / 4;
   justify-self: center;
   background-color: transparent;
@@ -69,6 +69,7 @@
   block-size: calc(100vh - 60px);
   background-color: $color-dark-2;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path 0.3s ease-in-out;
   z-index: 2;
 }
 
@@ -107,55 +108,23 @@
   margin-inline-start: 4px;
 }
 
-.nav__info-data-text .nav__data-title {
+.nav__data-title {
   font-size: $font-size-md;
   font-weight: 600;
   color: $color-medium-1;
 }
 
-.nav__info-data-text .nav__data-subtitle {
+.nav__data-subtitle {
   font-size: $font-size-vs;
   color: $color-medium-1;
 }
 
-.nav__info-container .nav__data-btn {
+.nav__data-btn {
   padding: 12px;
 }
 
 .nav__info-container--desktop {
   display: none;
-}
-
-/*__________________________________________*/
-// Section -> (Header (Nav-Bar Styles)
-/*__________________________________________*/
-.nav__list {
-  inline-size: 90%;
-  list-style: none;
-}
-
-.nav__list-item {
-  margin-block-end: 16px;
-}
-
-.nav__list-item .nav__list-link {
-  display: inline-block;
-  inline-size: 100%;
-  padding-inline: 8px;
-  font-size: $font-size-md;
-  font-weight: $font-weight-text2;
-  color: $color-medium-1;
-  text-decoration: none;
-}
-
-.nav__list-item .nav__list-link:hover {
-  color: $color-light-1;
-}
-
-.nav__list-item .nav__list-link--active {
-  color: $color-light-1;
-  background-color: $color-dark-1;
-  border-radius: $border-radius-size;
 }
 
 /*__________________________________________*/
@@ -184,22 +153,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
-  .nav__list {
-    display: flex;
-    flex-wrap: wrap;
-    inline-size: 100%;
-    padding: 0;
-  }
-
-  .nav__list-item {
-    margin: 0;
-  }
-  .nav__list-item .nav__list-link--active {
-    background: none;
-    border-radius: 0;
-  }
-
-  .nav-container .nav__btn-hamburguer-container {
+  .nav__btn-hamburguer-container {
     display: none;
   }
 
@@ -227,7 +181,7 @@
     inline-size: auto;
   }
 
-  .nav-container .nav__btn-shop-container {
+  .nav__btn-shop-container {
     grid-column: 4 / 5;
     justify-self: end;
     margin-inline-start: 8px;

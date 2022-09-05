@@ -5,10 +5,10 @@
   font-size: $font-size-md;
   font-weight: $font-weight-text2;
   color: $color-medium-3;
-  background-color: $color-light-1;
   border: none;
   border: 1px solid $color-medium-3;
   border-radius: $border-radius-size;
+  background-color: $color-light-1;
   outline: none;
   cursor: pointer;
   transition: background-color 0.15s ease-in-out, top 0.15s ease-in-out,
@@ -17,4 +17,16 @@
 
 .secondary-button:hover {
   background-color: $color-light-2;
+}
+
+.secondary-button__icon {
+  margin-inline-end: 8px;
+  font-size: inherit;
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .secondary-button {
+    font-size: $font-size-lg;
+  }
 }

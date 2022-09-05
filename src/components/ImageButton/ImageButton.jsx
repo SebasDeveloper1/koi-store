@@ -1,22 +1,32 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './ImageButton.scss';
 
 export function ImageButton(props) {
-  const { buttonType, modifierClassButton, style, srcIcon, altIcon, onClick } =
-    props;
+  const {
+    type,
+    tabIndex,
+    id,
+    modifierClass,
+    style,
+    srcIcon,
+    onClick,
+    onKeyDown,
+  } = props;
   return (
     <button
+      id={id}
+      tabIndex={tabIndex}
       // eslint-disable-next-line react/button-has-type
-      type={buttonType}
+      type={type}
       className={
-        modifierClassButton
-          ? `image-button ${modifierClassButton}`
-          : `image-button`
+        modifierClass ? `image-button ${modifierClass}` : `image-button`
       }
       style={style}
       onClick={onClick}
+      onKeyDown={onKeyDown}
     >
-      <img className="icon__image-button" src={srcIcon} alt={altIcon} />
+      <FontAwesomeIcon icon={srcIcon} className="icon__image-button" />
     </button>
   );
 }

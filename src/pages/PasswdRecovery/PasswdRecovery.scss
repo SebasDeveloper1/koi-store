@@ -3,8 +3,9 @@
 .passwd-recovery {
   display: grid;
   place-items: center;
-  inline-size: 100vw;
-  block-size: 100vh;
+  inline-size: 100%;
+  block-size: auto;
+  min-block-size: 100vh;
 }
 
 .passwd-recovery__form-container {
@@ -12,7 +13,7 @@
   grid-template-rows: auto 1fr auto;
   inline-size: 90%;
   max-inline-size: 400px;
-  padding: 26px 0;
+  padding: 100px 0 40px 0;
 }
 
 .passwd-recovery__logo {
@@ -24,6 +25,28 @@
 
 .passwd-recovery__texts-container {
   margin-block-end: 32px;
+}
+
+.passwd-recovery__title {
+  text-align: center;
+  margin-block-end: 4px;
+}
+
+.passwd-recovery__subtitle {
+  text-align: center;
+}
+
+.passwd-recovery__input {
+  margin-block-end: 24px;
+}
+
+.passwd-recovery__submit-btn {
+  margin-block-start: 40px;
+  margin-block-end: 32px;
+}
+
+.passwd-recovery__link {
+  text-align: center;
 }
 
 @media (min-width: 768px) {

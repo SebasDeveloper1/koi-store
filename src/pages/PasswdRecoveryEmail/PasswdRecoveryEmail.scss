@@ -1,0 +1,73 @@
+@import '../../styles/global';
+
+.passwd-recovery-email {
+  display: grid;
+  place-items: center;
+  inline-size: 100%;
+  block-size: auto;
+  min-block-size: 100vh;
+}
+
+.passwd-recovery-email__form-container {
+  display: grid;
+  place-items: center;
+  grid-template-rows: auto 1fr auto;
+  inline-size: 90%;
+  max-inline-size: 400px;
+  padding: 100px 0 40px 0;
+}
+
+.passwd-recovery-email__logo {
+  inline-size: 190px;
+  margin-block-end: 40px;
+  justify-self: center;
+  display: block;
+}
+
+.passwd-recovery-email__texts-container {
+  margin-block-end: 32px;
+}
+
+.passwd-recovery-email__title {
+  text-align: center;
+  margin-block-end: 4px;
+}
+
+.asswd-recovery-email__subtitle {
+  text-align: center;
+}
+
+.passwd-recovery-email__img-container {
+  inline-size: 150px;
+  block-size: 150px;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: rgba($color-medium-1, 0.3);
+}
+.passwd-recovery-email__img {
+  inline-size: 70%;
+}
+
+.passwd-recovery-email__submit-btn {
+  margin-block-start: 40px;
+  margin-block-end: 32px;
+}
+
+.horiz-section-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 100%;
+}
+
+.passwd-recovery-email__link {
+  margin-inline-start: 8px;
+}
+
+@media (min-width: 768px) {
+  .passwd-recovery-email__logo {
+    display: none;
+  }
+}

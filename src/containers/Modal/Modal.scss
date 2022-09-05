@@ -1,0 +1,29 @@
+@import '../../styles/global';
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  padding-block-start: 60px;
+  background-color: rgba($color-dark-2, 0.5);
+  transform: translate(0, -100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.modal-container--open {
+  transform: translate(0);
+}
+
+@media (min-width: 768px) {
+  .modal-container {
+    background-color: transparent;
+    transform: translate(100%, 0);
+  }
+
+  .modal-container--open {
+    transform: translate(0);
+  }
+}

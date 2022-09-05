@@ -1,0 +1,77 @@
+@import '../../styles/global';
+
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  margin-block-start: 60px;
+}
+
+.home__search-section-container {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+      180deg,
+      rgb(41, 5, 69, 0.7) 0%,
+      rgb(41, 5, 69) 100%
+    ),
+    url(../../assets/images/backgroundHeader.svg);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+.home__search-section {
+  place-self: center;
+  inline-size: 90%;
+  max-inline-size: 600px;
+  margin-block: 24px;
+}
+
+.home__select-container {
+  margin: 16px auto 0 auto;
+}
+
+.home__navbar-container {
+  overflow: hidden;
+  inline-size: 100%;
+  padding-inline-start: 24px;
+}
+
+.nav__list--home {
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  inline-size: 100%;
+  padding-block: 16px;
+}
+
+.nav__list-item--home {
+  margin: 0;
+}
+
+.nav__list-link--home {
+  padding-inline: 16px;
+}
+
+.home__products-container {
+  inline-size: 100%;
+  display: grid;
+  place-items: center;
+}
+
+@media (min-width: 768px) {
+  .home__search-section {
+    margin-block: 40px;
+  }
+
+  .home__select-container {
+    margin: 16px 0 0 0;
+  }
+
+  .home__navbar-container {
+    display: none;
+  }
+}

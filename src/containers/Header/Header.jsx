@@ -1,30 +1,27 @@
 import React from 'react';
-import './Header.scss';
+import {
+  faShoppingCart,
+  faCartArrowDown,
+  faBars,
+  faClose,
+} from '@fortawesome/free-solid-svg-icons';
 import { ImageButton } from '../../components/ImageButton/ImageButton';
-import { PrimaryLink } from '../../components/PrimaryLink/PrimaryLink';
 import { SecondaryTitle } from '../../components/SecondaryTitle/SecondaryTitle';
 import { PrimaryParagraph } from '../../components/PrimaryParagraph/PrimaryParagraph';
 import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton';
+import { NavList } from '../../components/NavList/NavList';
+import { navigationItemList } from '../../utils/navigationItemList';
+import { ShoppingCart } from '../../components/ShoppingCart/ShoppingCart';
+import { useProducts } from '../../Hooks/useProducts';
+import './Header.scss';
 
-export function Header() {
+export function Header(props) {
+  const { idSection } = props;
   const [headerStates, setHeaderStates] = React.useState({
     menuStatus: false,
     menuContainerStatus: 'nav__menu-container',
-    srcIcon: './assets/icons/menu.svg',
+    srcIcon: faBars,
   });
-
-  const itemsList = {
-    1: { itemName: 'All', itemStatus: true, itemHref: '/home' },
-    2: { itemName: 'Clothes', itemStatus: false, itemHref: '/login' },
-    3: { itemName: 'Electronics', itemStatus: false, itemHref: '/signup' },
-    4: {
-      itemName: 'Furniture',
-      itemStatus: false,
-      itemHref: '/password-recovery',
-    },
-    5: { itemName: 'Toys', itemStatus: false, itemHref: '/create-password' },
-    6: { itemName: 'Others', itemStatus: false, itemHref: '/error404' },
-  };
 
   const onMenu = () => {
     if (!headerStates.menuStatus) {
@@ -32,27 +29,35 @@ export function Header() {
         ...headerStates,
         menuStatus: true,
         menuContainerStatus: 'nav__menu-container nav__menu-container--open',
-        srcIcon: './assets/icons/menu-close.svg',
+        srcIcon: faClose,
       });
     } else {
       setHeaderStates({
         ...headerStates,
         menuStatus: false,
         menuContainerStatus: 'nav__menu-container ',
-        srcIcon: './assets/icons/menu.svg',
+        srcIcon: faBars,
       });
     }
   };
+
+  const {
+    stateProducts,
+    onClickOpenShoppingCart,
+    handleKeyDownOpenShoppingCart,
+    onClickCloseShoppingCart,
+    handleKeyDownCloseShoppingCart,
+  } = useProducts();
 
   return (
     <header className="header">
       <nav className="nav">
         <div className="nav-container">
           <ImageButton
-            buttonType="button"
-            modifierClassButton="nav__btn-hamburguer-container"
+            type="button"
+            modifierClass="nav__btn-hamburguer-container"
             srcIcon={headerStates.srcIcon}
-            altIcon="icon button"
+            altIcon="Go to start"
             onClick={onMenu}
           />
 
@@ -64,10 +69,7 @@ export function Header() {
             />
           </a>
 
-          <div
-            className={headerStates.menuContainerStatus}
-            style={{ transition: 'clip-path 0.3s ease-in-out' }}
-          >
+          <div className={headerStates.menuContainerStatus}>
             <section className="nav__info-container nav__info-container--mobile">
               <div className="nav__info-data-container">
                 <img
@@ -78,36 +80,27 @@ export function Header() {
                 <div className="nav__info-data-text">
                   <SecondaryTitle
                     textContent="Jessica Casas"
-                    modifierClassTitle="nav__data-title"
+                    modifierClass="nav__data-title"
                   />
                   <PrimaryParagraph
                     textContent="koistore@example.com"
-                    modifierClassParagraph="nav__data-subtitle"
+                    modifierClass="nav__data-subtitle"
                   />
                 </div>
               </div>
               <PrimaryButton
-                buttonType="submit"
+                type="submit"
                 textButton="Log up"
-                modifierClassButton="nav__data-btn"
+                modifierClass="nav__data-btn"
               />
             </section>
 
-            <ul className="nav__list">
-              {Object.entries(itemsList).map(([itemId, infoItem]) => (
-                <li className="nav__list-item" key={itemId}>
-                  <PrimaryLink
-                    hrefLink={infoItem.itemHref}
-                    textLink={infoItem.itemName}
-                    modifierClassLink={
-                      infoItem.itemStatus
-                        ? `nav__list-link nav__list-link--active`
-                        : `nav__list-link`
-                    }
-                  />
-                </li>
-              ))}
-            </ul>
+            <NavList
+              /* Passing the result of the function navigationItemList to the itemsList prop. */
+              itemsList={navigationItemList({ idItem: idSection })}
+              modifierClassList=""
+              modifierClassItemList=""
+            />
           </div>
 
           <section className="nav__info-container nav__info-container--desktop">
@@ -120,20 +113,36 @@ export function Header() {
               <div className="nav__info-data-text">
                 <SecondaryTitle
                   textContent="Jessica Casas"
-                  modifierClassTitle="nav__data-title"
+                  modifierClass="nav__data-title"
                 />
                 <PrimaryParagraph
                   textContent="koistore@example.com"
-                  modifierClassParagraph="nav__data-subtitle"
+                  modifierClass="nav__data-subtitle"
                 />
               </div>
             </div>
           </section>
           <ImageButton
-            buttonType="button"
-            modifierClassButton="nav__btn-shop-container"
-            srcIcon="./assets/icons/shopping-car.svg"
-            altIcon="icon button"
+            type="button"
+            modifierClass="nav__btn-shop-container"
+            srcIcon={
+              stateProducts.openShoppingCart ? faCartArrowDown : faShoppingCart
+            }
+            onClick={
+              stateProducts.openShoppingCart
+                ? onClickCloseShoppingCart
+                : onClickOpenShoppingCart
+            }
+            onKeyDown={
+              stateProducts.openShoppingCart
+                ? handleKeyDownCloseShoppingCart
+                : handleKeyDownOpenShoppingCart
+            }
+          />
+          <ShoppingCart
+            modifierClass={
+              stateProducts.openShoppingCart ? `shopping-cart--open` : ``
+            }
           />
         </div>
       </nav>

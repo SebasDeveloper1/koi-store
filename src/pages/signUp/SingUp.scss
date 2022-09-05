@@ -1,0 +1,35 @@
+@import '../../styles/global';
+
+.signup {
+  display: grid;
+  place-items: center;
+  inline-size: 100%;
+  block-size: auto;
+  min-block-size: 100vh;
+}
+
+.signup__form-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  inline-size: 90%;
+  max-inline-size: 400px;
+  padding: 100px 0 40px 0;
+}
+
+.signup__title {
+  text-align: center;
+  margin-block-end: 32px;
+}
+
+.signup__input {
+  margin-block-end: 24px;
+}
+
+.signup__create-btn {
+  margin-block-start: 16px;
+  margin-block-end: 32px;
+}
+
+.signup__link {
+  text-align: center;
+}

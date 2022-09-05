@@ -3,8 +3,9 @@
 .new-passwd {
   display: grid;
   place-items: center;
-  inline-size: 100vw;
-  block-size: 100vh;
+  inline-size: 100%;
+  block-size: auto;
+  min-block-size: 100vh;
 }
 
 .new-passwd__form-container {
@@ -12,7 +13,7 @@
   grid-template-rows: auto 1fr auto;
   inline-size: 90%;
   max-inline-size: 400px;
-  padding: 26px 0;
+  padding: 100px 0 40px 0;
 }
 
 .new-passwd__logo {
@@ -23,6 +24,24 @@
 }
 
 .new-passwd__texts-container {
+  margin-block-end: 32px;
+}
+
+.new-passwd__title {
+  text-align: center;
+  margin-block-end: 4px;
+}
+
+.new-passwd__subtitle {
+  text-align: center;
+}
+
+.new-passwd__input {
+  margin-block-end: 24px;
+}
+
+.new-passwd__btn {
+  margin-block-start: 40px;
   margin-block-end: 32px;
 }
 

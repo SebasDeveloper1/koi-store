@@ -1,11 +1,12 @@
+/* Defining the colors for the different elements. */
 $color-light-1: #fbfafb;
 $color-light-2: #eeeaf2;
+$color-light-3: #f7f7f7;
 $color-medium-1: #aa83c8;
 $color-medium-2: #8b48bf;
 $color-medium-3: #5c218a;
 $color-dark-1: #3e0f64;
 $color-dark-2: #290545;
-
 $color-background-404: radial-gradient(
   circle,
   #290545,
@@ -14,23 +15,42 @@ $color-background-404: radial-gradient(
   #4f1a78,
   #5c218a
 );
+$color-background-section: linear-gradient(
+  to bottom,
+  #3e0f64,
+  #45136d,
+  #4d1877,
+  #541c80,
+  #5c218a
+);
 
+/* Defining the font family for the different elements. */
 $font-family-titles: 'Dosis', sans-serif;
 $font-family-text: 'Red Hat Display', sans-serif;
 
+/* Defining the font sizes for the different elements. */
 $font-size-vs: 1.2rem;
 $font-size-sm: 1.4rem;
 $font-size-md: 1.6rem;
-$font-size-lg: 1.8rem;
+$font-size-md2: 1.7rem;
+$font-size-lg: 2rem;
 $font-size-lg2: 2.4rem;
-$font-size-lg3: 3rem;
-$font-size-xl: 4rem;
-$font-size-xxl: 5rem;
-$font-size-xxxl: 6rem;
+$font-size-lg3: 2.8rem;
+$font-size-xl: 3.2rem;
+$font-size-xxl: 4rem;
+$font-size-xxxl: 4.8rem;
 
+/* Defining the font weight for the different elements. */
 $font-weight-title1: 800;
 $font-weight-title2: 700;
 $font-weight-text1: 400;
 $font-weight-text2: 500;
 
+/* Defining the border radius size. */
 $border-radius-size: 12px;
+
+/* Defining the size of the icons. */
+$icon-size-sm: 14px;
+$icon-size-md: 20px;
+$icon-size-lg: 24px;
+$icon-size-lg2: 32px;

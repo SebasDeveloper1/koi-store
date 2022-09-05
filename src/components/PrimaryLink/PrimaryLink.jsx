@@ -2,12 +2,12 @@ import React from 'react';
 import './PrimaryLink.scss';
 
 export function PrimaryLink(props) {
-  const { hrefLink, textLink, modifierClassLink, style } = props;
+  const { href, textLink, modifierClass, style } = props;
   return (
     <a
-      href={hrefLink}
+      href={href}
       className={
-        modifierClassLink ? `primary-link ${modifierClassLink}` : `primary-link`
+        modifierClass ? `primary-link ${modifierClass}` : `primary-link`
       }
       style={style}
     >

@@ -4,14 +4,14 @@
   font-family: $font-family-titles;
   font-size: $font-size-lg2;
   font-weight: $font-weight-title2;
-  line-height: 1.5;
-  margin: 0;
 }
 
 .secondary-title-light {
   color: $color-light-2;
 }
 
-.align-center {
-  text-align: center;
+@media (min-width: 768px) {
+  .secondary-title {
+    font-size: $font-size-lg3;
+  }
 }

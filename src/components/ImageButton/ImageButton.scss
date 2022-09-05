@@ -6,7 +6,8 @@
   overflow: hidden;
   inline-size: 50px;
   block-size: 50px;
-  padding: 4px;
+  font-size: $icon-size-lg;
+  color: $color-light-1;
   border-radius: 50%;
   background-color: $color-medium-3;
   border: none;
@@ -17,12 +18,12 @@
 }
 
 .icon__image-button {
-  inline-size: 100%;
-  block-size: 100%;
+  font-size: inherit;
+  color: inherit;
 }
 
 @media (min-width: 768px) {
   .image-button:hover {
-    background-color: $color-dark-1;
+    background-color: $color-medium-2;
   }
 }

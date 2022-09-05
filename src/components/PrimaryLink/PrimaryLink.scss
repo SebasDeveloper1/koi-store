@@ -1,12 +1,15 @@
 @import '../../styles/global';
 
 .primary-link {
+  inline-size: auto;
   font-size: $font-size-md;
   font-weight: $font-weight-text2;
   color: $color-medium-3;
   cursor: pointer;
 }
 
-.align-center {
-  text-align: center;
+@media (min-width: 768px) {
+  .primary-link {
+    font-size: $font-size-lg;
+  }
 }

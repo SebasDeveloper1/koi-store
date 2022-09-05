@@ -2,12 +2,13 @@ import React from 'react';
 import './PrimaryParagraph.scss';
 
 export function PrimaryParagraph(props) {
-  const { textContent, modifierClassParagraph, style } = props;
+  const { id, textContent, modifierClass, style } = props;
   return (
     <p
+      id={id}
       className={
-        modifierClassParagraph
-          ? `primary-paragraph ${modifierClassParagraph}`
+        modifierClass
+          ? `primary-paragraph ${modifierClass}`
           : `primary-paragraph`
       }
       style={style}

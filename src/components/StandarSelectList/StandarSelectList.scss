@@ -1,0 +1,38 @@
+@import '../../styles/global';
+
+.select-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  inline-size: 100%;
+  max-inline-size: 200px;
+}
+
+.select__label {
+  font-size: $font-size-md;
+  font-weight: $font-weight-text2;
+  color: $color-light-1;
+}
+
+.select__list {
+  padding: 4px;
+  font-size: $font-size-md;
+  font-weight: $font-weight-text2;
+  color: $color-medium-1;
+  border: none;
+  background-color: transparent;
+}
+
+.select__list:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .select__label {
+    font-size: $font-size-lg;
+  }
+
+  .select__list {
+    font-size: $font-size-lg;
+  }
+}

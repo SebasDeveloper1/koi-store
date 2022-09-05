@@ -3,23 +3,31 @@ import './StandardInput.scss';
 
 export function StandardInput(props) {
   const {
-    forLabel,
+    htmlFor,
     textLabel,
-    typeInput,
-    idInput,
-    placeholderInput,
+    type,
+    id,
+    placeholder,
     modifierClassInput,
+    modifierClassLabel,
     style,
   } = props;
   return (
     <>
-      <label htmlFor={forLabel} className="label-standard-input">
+      <label
+        htmlFor={htmlFor}
+        className={
+          modifierClassLabel
+            ? `label-standard-input ${modifierClassLabel}`
+            : `label-standard-input`
+        }
+      >
         {textLabel}
       </label>
       <input
-        type={typeInput}
-        id={idInput}
-        placeholder={placeholderInput}
+        type={type}
+        id={id}
+        placeholder={placeholder}
         className={
           modifierClassInput
             ? `standard-input ${modifierClassInput}`

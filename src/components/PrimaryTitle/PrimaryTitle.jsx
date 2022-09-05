@@ -2,13 +2,12 @@ import React from 'react';
 import './PrimaryTitle.scss';
 
 export function PrimaryTitle(props) {
-  const { textContent, modifierClassTitle, style } = props;
+  const { id, textContent, modifierClass, style } = props;
   return (
     <h1
+      id={id}
       className={
-        modifierClassTitle
-          ? `primary-title ${modifierClassTitle}`
-          : `primary-title`
+        modifierClass ? `primary-title ${modifierClass}` : `primary-title`
       }
       style={style}
     >

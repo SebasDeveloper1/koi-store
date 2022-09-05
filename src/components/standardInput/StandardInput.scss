@@ -9,16 +9,25 @@
 
 .standard-input {
   padding: 12.5px 0 12.5px 16px;
-  font-size: $font-size-lg;
+  font-size: $font-size-md;
   font-weight: $font-weight-text2;
   color: $color-medium-2;
   border: none;
   border-radius: $border-radius-size;
-  outline: none;
   background-color: $color-light-2;
 }
 
 .standard-input::placeholder {
   font-family: $font-family-text;
   color: $color-medium-1;
+}
+
+@media (min-width: 768px) {
+  .label-standard-input {
+    font-size: $font-size-lg;
+  }
+
+  .standard-input {
+    font-size: $font-size-lg;
+  }
 }

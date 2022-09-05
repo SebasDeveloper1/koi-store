@@ -3,8 +3,9 @@
 .login {
   display: grid;
   place-items: center;
-  inline-size: 100vw;
-  block-size: 100vh;
+  inline-size: 100%;
+  block-size: auto;
+  min-block-size: 100vh;
 }
 
 .login__form-container {
@@ -12,7 +13,7 @@
   grid-template-rows: auto 1fr auto;
   inline-size: 90%;
   max-inline-size: 400px;
-  padding: 26px 0;
+  padding: 100px 0 40px 0;
 }
 
 .login__logo {
@@ -20,6 +21,20 @@
   margin-block-end: 40px;
   justify-self: center;
   display: block;
+}
+
+.login__input {
+  margin-block-end: 24px;
+}
+
+.login__login-btn {
+  margin-block-start: 16px;
+  margin-block-end: 32px;
+}
+
+.login__link {
+  text-align: center;
+  margin-block-end: 48px;
 }
 
 @media (min-width: 768px) {

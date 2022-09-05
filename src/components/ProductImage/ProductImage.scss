@@ -1,0 +1,8 @@
+@import '../../styles/global';
+
+.product-img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}

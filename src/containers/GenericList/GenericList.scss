@@ -1,0 +1,17 @@
+@import '../../styles/global';
+
+.generic-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 170px));
+  justify-content: center;
+  gap: 24px;
+  width: 90%;
+  margin: 36px auto;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .generic-list-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+  }
+}

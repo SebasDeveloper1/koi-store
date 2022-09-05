@@ -2,13 +2,12 @@ import React from 'react';
 import './SecondaryTitle.scss';
 
 export function SecondaryTitle(props) {
-  const { textContent, modifierClassTitle, style } = props;
+  const { id, textContent, modifierClass, style } = props;
   return (
     <h2
+      id={id}
       className={
-        modifierClassTitle
-          ? `secondary-title ${modifierClassTitle}`
-          : `secondary-title`
+        modifierClass ? `secondary-title ${modifierClass}` : `secondary-title`
       }
       style={style}
     >

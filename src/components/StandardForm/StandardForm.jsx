@@ -1,9 +1,17 @@
 import React from 'react';
 import './StandardForm.scss';
 
-export function StandardForm({ children, style }) {
+export function StandardForm({ id, modifierClass, style, onSubmit, children }) {
   return (
-    <form action="/" className="standard-form" style={style}>
+    <form
+      id={id}
+      onSubmit={onSubmit}
+      action="/"
+      className={
+        modifierClass ? `standard-form ${modifierClass}` : `standard-form`
+      }
+      style={style}
+    >
       {children}
     </form>
   );

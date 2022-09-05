@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from '../containers/Layout/Layout';
-import { Status404 } from '../pages/Status404/Status404';
 import { Home } from '../pages/Home/Home';
-import { Login } from '../containers/login/LogIn';
-import { SignUp } from '../containers/signUp/SignUp';
-import { PasswdRecovery } from '../containers/PasswdRecovery/PasswdRecovery';
-import { CreateNewpasswd } from '../containers/CreateNewpasswd/CreateNewpasswd';
+import { Login } from '../pages/login/LogIn';
+import { SignUp } from '../pages/signUp/SignUp';
+import { PasswdRecovery } from '../pages/PasswdRecovery/PasswdRecovery';
+import { PasswdRecoveryEmail } from '../pages/PasswdRecoveryEmail/PasswdRecoveryEmail';
+import { CreateNewPasswd } from '../pages/CreateNewpasswd/CreateNewPasswd';
+import { Status404 } from '../pages/Status404/Status404';
 
 export function NavigationRoutes() {
   return (
@@ -18,7 +19,13 @@ export function NavigationRoutes() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/password-recovery" element={<PasswdRecovery />} />
-          <Route exact path="/create-password" element={<CreateNewpasswd />} />
+          <Route exact path="/password-recovery" element={<PasswdRecovery />} />
+          <Route
+            exact
+            path="/password-recovery-email"
+            element={<PasswdRecoveryEmail />}
+          />
+          <Route exact path="/create-password" element={<CreateNewPasswd />} />
           <Route path="*" element={<Status404 />} />
         </Routes>
       </Layout>
