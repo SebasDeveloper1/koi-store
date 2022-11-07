@@ -1,0 +1,54 @@
+@import '@styles/global';
+
+/*__________________________________________*/
+// Section -> (Header (user-menu-Bar Styles)
+/*__________________________________________*/
+.user-menu__list {
+  inline-size: 90%;
+  padding: 16px 8px 0;
+  margin-block-end: 32px;
+  border-radius: $border-radius-size;
+  background-color: rgba($color-light-1, 0.1);
+  list-style: none;
+}
+
+.user-menu__list-item {
+  margin-block-end: 16px;
+}
+
+.user-menu__list-link {
+  display: inline-block;
+  inline-size: 100%;
+  font-size: $font-size-md2;
+  font-weight: $font-weight-text2;
+  color: $color-medium-1;
+  text-decoration: none;
+}
+
+.user-menu__list-link:hover {
+  color: $color-light-1;
+}
+
+.user-menu__list-link--active {
+  padding-block-start: 16px;
+  border-block-start: 1px solid $color-medium-2;
+  color: rgba($color-light-3, 0.6);
+}
+
+// @media (min-width: 768px) {
+//   .user-menu__list {
+//     display: flex;
+//     flex-wrap: wrap;
+//     inline-size: 100%;
+//     padding: 0;
+//   }
+
+//   .user-menu__list-item {
+//     margin: 0;
+//   }
+
+//   .user-menu__list-link--active {
+//     background: none;
+//     border-radius: 0;
+//   }
+// }

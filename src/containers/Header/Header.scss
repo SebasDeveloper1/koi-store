@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 /*__________________________________________*/
 // Section -> (Header)
@@ -99,9 +99,6 @@
 .nav__info-image {
   inline-size: 36px;
   block-size: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
 }
 
 .nav__info-data-text {
@@ -121,6 +118,13 @@
 
 .nav__data-btn {
   padding: 12px;
+}
+
+.nav__categories-title {
+  inline-size: 90%;
+  padding: 16px 0;
+  color: $color-medium-1;
+  border-block-start: 1px solid $color-medium-2;
 }
 
 .nav__info-container--desktop {
@@ -161,7 +165,15 @@
     display: none;
   }
 
+  .user-menu__list--mobile {
+    display: none;
+  }
+
+  .nav__categories-title {
+    display: none;
+  }
   .nav__info-container--desktop {
+    position: relative;
     grid-column: 3 / 4;
     justify-self: end;
     display: flex;
@@ -172,6 +184,26 @@
     margin: 0;
     border: none;
     border-radius: 0;
+  }
+
+  .user-menu__list--desktop {
+    position: absolute;
+    left: 0;
+    top: 110%;
+    background-color: rgba($color-medium-3, 1);
+    -webkit-box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+  }
+
+  .user-menu__list--desktop::after {
+    position: absolute;
+    top: -4px;
+    left: 10px;
+    content: '';
+    inline-size: 16px;
+    block-size: 16px;
+    background-color: inherit;
+    transform: rotate(45deg);
   }
 
   .nav__info-data-container--desktop {

@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 .passwd-recovery-email {
   display: grid;
@@ -30,6 +30,7 @@
 
 .passwd-recovery-email__title {
   text-align: center;
+  margin: 0;
   margin-block-end: 4px;
 }
 
@@ -44,15 +45,15 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background-color: rgba($color-medium-1, 0.3);
+  background-color: $color-medium-1;
 }
 .passwd-recovery-email__img {
-  inline-size: 70%;
+  color: $color-light-1;
+  font-size: 9rem;
 }
 
 .passwd-recovery-email__submit-btn {
-  margin-block-start: 40px;
-  margin-block-end: 32px;
+  margin-block: 32px;
 }
 
 .horiz-section-form {

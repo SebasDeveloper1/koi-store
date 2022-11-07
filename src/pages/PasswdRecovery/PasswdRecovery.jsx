@@ -1,12 +1,13 @@
 import React from 'react';
-import { Header } from '../../containers/Header/Header';
-import { useScreenSize } from '../../Hooks/useScreenSize';
-import { StandardForm } from '../../components/StandardForm/StandardForm';
-import { PrimaryTitle } from '../../components/PrimaryTitle/PrimaryTitle';
-import { PrimaryParagraph } from '../../components/PrimaryParagraph/PrimaryParagraph';
-import { StandardInput } from '../../components/StandardInput/StandardInput';
-import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton';
-import { PrimaryLink } from '../../components/PrimaryLink/PrimaryLink';
+import logo from '@images/koi_store_logo.png';
+import { Header } from '@containers/Header/Header';
+import { useScreenSize } from '@hooks/useScreenSize';
+import { StandardForm } from '@components/StandardForm/StandardForm';
+import { PrimaryTitle } from '@components/PrimaryTitle/PrimaryTitle';
+import { PrimaryParagraph } from '@components/PrimaryParagraph/PrimaryParagraph';
+import { StandardInput } from '@components/StandardInput/StandardInput';
+import { PrimaryButton } from '@components/PrimaryButton/PrimaryButton';
+import { PrimaryLink } from '@components/PrimaryLink/PrimaryLink';
 import './PasswdRecovery.scss';
 
 export function PasswdRecovery() {
@@ -19,7 +20,7 @@ export function PasswdRecovery() {
       <section className="passwd-recovery">
         <div className="passwd-recovery__form-container">
           <img
-            src="./assets/images/koi_store_logo.png"
+            src={logo}
             alt="Koi Store Logo"
             className="passwd-recovery__logo"
           />

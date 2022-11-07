@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 .select-container {
   display: flex;
@@ -29,10 +29,10 @@
 
 @media (min-width: 768px) {
   .select__label {
-    font-size: $font-size-lg;
+    font-size: $font-size-md2;
   }
 
   .select__list {
-    font-size: $font-size-lg;
+    font-size: $font-size-md2;
   }
 }

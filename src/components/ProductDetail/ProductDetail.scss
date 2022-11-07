@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 .product-details-container {
   place-self: center;
@@ -85,12 +85,4 @@
 
 .details-texts__buy-btn {
   max-block-size: 23%;
-}
-
-@media (min-width: 768px) {
-  .product-details-container {
-    place-self: end;
-    block-size: 100%;
-    border-radius: 0;
-  }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import { PrimaryTitle } from '../../components/PrimaryTitle/PrimaryTitle';
-import { SecondaryTitle } from '../../components/SecondaryTitle/SecondaryTitle';
-import { SecondaryButton } from '../../components/SecondaryButton/SecondaryButton';
+import status404 from '@images/404_status.svg';
+import { PrimaryTitle } from '@components/PrimaryTitle/PrimaryTitle';
+import { SecondaryTitle } from '@components/SecondaryTitle/SecondaryTitle';
+import { SecondaryButton } from '@components/SecondaryButton/SecondaryButton';
 import './Status404.scss';
 
 const onClick = (e) => {
@@ -13,7 +14,7 @@ export function Status404() {
     <section className="status-404">
       <div className="container-404">
         <img
-          src="./assets/images/404_status.svg"
+          src={status404}
           alt="Status 404"
           className="container-404__image"
         />

@@ -2,5 +2,9 @@ import React from 'react';
 import './GenericList.scss';
 
 export function GenericList({ children }) {
-  return <ul className="generic-list-container">{children}</ul>;
+  return (
+    <div className="generic-list-container">
+      <ul className="generic-list">{children}</ul>;
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 .image-button {
   display: grid;
@@ -20,6 +20,13 @@
 .icon__image-button {
   font-size: inherit;
   color: inherit;
+}
+
+.img__image-button {
+  inline-size: 80%;
+  block-size: 80%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (min-width: 768px) {

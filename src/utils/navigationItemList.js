@@ -1,20 +1,20 @@
 export function navigationItemList({ idItem }) {
   const itemsList = {
-    1: { itemName: 'All', itemStatus: false, itemHref: '/home' },
-    2: { itemName: 'Clothes', itemStatus: false, itemHref: '/login' },
-    3: { itemName: 'Electrics', itemStatus: false, itemHref: '/signup' },
+    1: { itemName: 'Home', itemStatus: false, itemHref: '/home' },
+    2: { itemName: 'Login', itemStatus: false, itemHref: '/login' },
+    3: { itemName: 'Signup', itemStatus: false, itemHref: '/signup' },
     4: {
-      itemName: 'Furniture',
+      itemName: 'Pass-Reco',
       itemStatus: false,
       itemHref: '/password-recovery',
     },
     5: {
-      itemName: 'Toys',
+      itemName: 'Pass-Reco-Email',
       itemStatus: false,
       itemHref: '/password-recovery-email',
     },
     6: {
-      itemName: 'Others',
+      itemName: 'Create-Pass',
       itemStatus: false,
       itemHref: '/create-password',
     },

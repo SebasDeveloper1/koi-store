@@ -1,27 +1,25 @@
 import React from 'react';
-import { Header } from '../../containers/Header/Header';
-import { SearchInput } from '../../components/SearchInput/SearchInput';
-import { NavList } from '../../components/NavList/NavList';
-import { navigationItemList } from '../../utils/navigationItemList';
-import { StandarSelectList } from '../../components/StandarSelectList/StandarSelectList';
-import { GenericList } from '../../containers/GenericList/GenericList';
-import { ProducCard } from '../../components/ProducCard/ProducCard';
-import { useProducts } from '../../Hooks/useProducts';
-import { Modal } from '../../containers/Modal/Modal';
-import { ProductDetail } from '../../components/ProductDetail/ProductDetail';
+import { navigationItemList } from '@utils/navigationItemList';
+import { useEvents } from '@hooks/useEvents';
+import { useProduts } from '@hooks/useProducts';
+import { SearchInput } from '@components/SearchInput/SearchInput';
+import { NavList } from '@components/NavList/NavList';
+import { StandarSelectList } from '@components/StandarSelectList/StandarSelectList';
+import { ProductCard } from '@components/ProductCard/ProductCard';
+import { ProductDetail } from '@components/ProductDetail/ProductDetail';
+import { Header } from '@containers/Header/Header';
+import { GenericList } from '@containers/GenericList/GenericList';
+import { Modal } from '@containers/Modal/Modal';
 import './Home.scss';
 
 export function Home() {
   const dataListOpstions = ['Most recent', 'Less recent'];
 
-  /* Destructuring the object returned by the hook. */
-  const {
-    stateProducts,
-    onClickOpenModal,
-    handleKeyDownOpenModal,
-    onClickCloseModal,
-    handleKeyDownCloseModal,
-  } = useProducts();
+  /* Destructuring the state, handleModal and handleModalDown from the useEvents hook. */
+  const { state, handleModal, handleModalDown } = useEvents();
+
+  /* Destructuring the productList from the useProduts hook. */
+  const { productList, loading, error } = useProduts();
 
   return (
     <>
@@ -54,94 +52,35 @@ export function Home() {
         </section>
         <section className="home__products-container">
           <GenericList>
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
-            <ProducCard
-              idProduct="32"
-              productPrice="456"
-              productTitle="Licensed Plastic Pizza"
-              srcProductImage="https://api.lorem.space/image?w=640&h=480&r=2935"
-              onClick={onClickOpenModal}
-              onKeyDown={handleKeyDownOpenModal}
-            />
+            {loading ? (
+              <p> Cargando...</p>
+            ) : error ? (
+              <p>Error...</p>
+            ) : (
+              productList.map((product) => (
+                <ProductCard
+                  key={`product-list__${product.id}`}
+                  productInfo={product}
+                  onClick={() => handleModal({ modalInfo: product })}
+                  onKeyDown={(event) => {
+                    handleModalDown(event, { modalInfo: product });
+                  }}
+                />
+              ))
+            )}
           </GenericList>
         </section>
         <Modal
-          modifierClass={stateProducts.openModal ? 'modal-container--open' : ''}
+          modifierClass={
+            state.openModal.modalState ? `modal-container--open` : ``
+          }
         >
           <ProductDetail
-            onClickCloseModal={onClickCloseModal}
-            handleKeyDownCloseModal={handleKeyDownCloseModal}
+            productInfo={state.openModal.modalInfo}
+            onClickCloseModal={() => handleModal({ modalInfo: {} })}
+            handleKeyDownCloseModal={(event) =>
+              handleModalDown(event, { modalInfo: {} })
+            }
           />
         </Modal>
       </main>

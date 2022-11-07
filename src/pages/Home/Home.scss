@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 .home {
   position: relative;
@@ -40,12 +40,16 @@
 }
 
 .nav__list--home {
-  overflow-x: scroll;
+  overflow-x: auto;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   inline-size: 100%;
   padding-block: 16px;
+}
+
+.nav__list--home::-webkit-scrollbar {
+  block-size: 4px;
 }
 
 .nav__list-item--home {

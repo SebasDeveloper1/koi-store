@@ -1,10 +1,10 @@
 import React from 'react';
-import { Header } from '../../containers/Header/Header';
-import { PrimaryTitle } from '../../components/PrimaryTitle/PrimaryTitle';
-import { StandardForm } from '../../components/StandardForm/StandardForm';
-import { StandardInput } from '../../components/StandardInput/StandardInput';
-import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton';
-import { PrimaryLink } from '../../components/PrimaryLink/PrimaryLink';
+import { Header } from '@containers/Header/Header';
+import { PrimaryTitle } from '@components/PrimaryTitle/PrimaryTitle';
+import { StandardForm } from '@components/StandardForm/StandardForm';
+import { StandardInput } from '@components/StandardInput/StandardInput';
+import { PrimaryButton } from '@components/PrimaryButton/PrimaryButton';
+import { PrimaryLink } from '@components/PrimaryLink/PrimaryLink';
 import './SingUp.scss';
 
 export function SignUp() {

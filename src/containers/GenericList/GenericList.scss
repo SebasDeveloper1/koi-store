@@ -1,17 +1,22 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 .generic-list-container {
+  inline-size: 90%;
+  max-inline-size: 1280px;
+  margin: 36px auto;
+}
+
+.generic-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 170px));
   justify-content: center;
   gap: 24px;
-  width: 90%;
-  margin: 36px auto;
+  inline-size: 100%;
   list-style: none;
 }
 
 @media (min-width: 768px) {
-  .generic-list-container {
+  .generic-list {
     grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
   }
 }

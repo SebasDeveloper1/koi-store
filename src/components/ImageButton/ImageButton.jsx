@@ -8,8 +8,11 @@ export function ImageButton(props) {
     tabIndex,
     id,
     modifierClass,
+    title,
     style,
+    typeIcon,
     srcIcon,
+    altIcon,
     onClick,
     onKeyDown,
   } = props;
@@ -22,11 +25,20 @@ export function ImageButton(props) {
       className={
         modifierClass ? `image-button ${modifierClass}` : `image-button`
       }
+      title={title}
       style={style}
       onClick={onClick}
       onKeyDown={onKeyDown}
     >
-      <FontAwesomeIcon icon={srcIcon} className="icon__image-button" />
+      {typeIcon === 'FontAwesomeIcon' ? (
+        <FontAwesomeIcon
+          icon={srcIcon}
+          className="icon__image-button"
+          alt={altIcon}
+        />
+      ) : (
+        <img src={srcIcon} className="img__image-button" alt={altIcon} />
+      )}
     </button>
   );
 }

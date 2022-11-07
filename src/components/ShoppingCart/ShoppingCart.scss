@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 .shopping-cart {
   position: absolute;
@@ -26,6 +26,7 @@
   overflow-x: hidden;
   overscroll-behavior-y: contain;
   display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(70px, 90px));
   gap: 18px;
   inline-size: 100%;
   block-size: auto;

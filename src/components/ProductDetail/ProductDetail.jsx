@@ -1,16 +1,28 @@
-import React from 'react';
-import { faClose, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
-import { useProducts } from '../../Hooks/useProducts';
-import { ImageButton } from '../ImageButton/ImageButton';
-import { ProductImage } from '../ProductImage/ProductImage';
-import { SecondaryTitle } from '../SecondaryTitle/SecondaryTitle';
-import { TertiaryTitle } from '../TertiaryTitle/TertiaryTitle';
-import { PrimaryParagraph } from '../PrimaryParagraph/PrimaryParagraph';
-import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
+import React, { useContext, useState } from 'react';
+import {
+  faClose,
+  faCartArrowDown,
+  faCartShopping,
+} from '@fortawesome/free-solid-svg-icons';
+import { AppContext } from '@context/AppContext';
+import { ImageButton } from '@components/ImageButton/ImageButton';
+import { ProductImage } from '@components/ProductImage/ProductImage';
+import { SecondaryTitle } from '@components/SecondaryTitle/SecondaryTitle';
+import { TertiaryTitle } from '@components/TertiaryTitle/TertiaryTitle';
+import { PrimaryParagraph } from '@components/PrimaryParagraph/PrimaryParagraph';
+import { PrimaryButton } from '@components/PrimaryButton/PrimaryButton';
 import './ProductDetail.scss';
 
 export function ProductDetail(props) {
-  const { onClickCloseModal, handleKeyDownCloseModal } = props;
+  const { productInfo, onClickCloseModal, handleKeyDownCloseModal } = props;
+  const { addProductToCart } = useContext(AppContext);
+  const [toggleProduct, setToggleProduct] = useState(false);
+
+  const handleClickShoppingBtn = (item) => {
+    addProductToCart({ payload: item });
+    setToggleProduct(!toggleProduct);
+    onClickCloseModal();
+  };
 
   return (
     <section className="product-details-container">
@@ -20,30 +32,31 @@ export function ProductDetail(props) {
         type="button"
         modifierClass="details__close-btn"
         style={{}}
+        typeIcon="FontAwesomeIcon"
         srcIcon={faClose}
         onClick={onClickCloseModal}
         onKeyDown={handleKeyDownCloseModal}
       />
       <figure className="details__section-img">
         <ProductImage
-          src="https://api.lorem.space/image?w=640&h=480&r=2935"
-          alt="Licensed Plastic Pizza"
+          src={productInfo.images}
+          alt={productInfo.title}
           modifierClass=""
         />
       </figure>
       <SecondaryTitle
-        textContent="$ 4'569.99"
+        textContent={`$ ${productInfo.price}`}
         modifierClass="details-texts__price"
       />
       <section className="details__section-info">
         <div className="info-container">
           <div className="info__texts-container">
             <TertiaryTitle
-              textContent="• Licensed Plastic Pizza"
+              textContent={`• ${productInfo.title}`}
               modifierClass="details-texts__title"
             />
             <PrimaryParagraph
-              textContent="Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+              textContent={productInfo.description}
               modifierClass="details-texts__descr"
             />
           </div>
@@ -52,7 +65,10 @@ export function ProductDetail(props) {
           type="button"
           textButton="Add to cart"
           modifierClass="info__buy-btn"
-          srcIcon={faCartArrowDown}
+          srcIcon={toggleProduct ? faCartArrowDown : faCartShopping}
+          onClick={() => {
+            handleClickShoppingBtn(productInfo);
+          }}
         />
       </section>
     </section>

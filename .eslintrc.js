@@ -24,4 +24,9 @@ module.exports = {
     // "no-restricted-globals": RULES.OFF,
     // "no-param-reassign": RULES.OFF,
   },
+  settings: {
+    'import/resolver': {
+      foo: { someConfig: value },
+    },
+  },
 };

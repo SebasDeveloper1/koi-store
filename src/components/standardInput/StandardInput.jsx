@@ -7,6 +7,7 @@ export function StandardInput(props) {
     textLabel,
     type,
     id,
+    name,
     placeholder,
     modifierClassInput,
     modifierClassLabel,
@@ -27,6 +28,7 @@ export function StandardInput(props) {
       <input
         type={type}
         id={id}
+        name={name}
         placeholder={placeholder}
         className={
           modifierClassInput

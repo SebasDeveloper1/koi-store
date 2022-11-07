@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 /*__________________________________________*/
 // Section -> (Header (Nav-Bar Styles)
@@ -16,7 +16,7 @@
   display: inline-block;
   inline-size: 100%;
   padding-inline: 8px;
-  font-size: $font-size-md;
+  font-size: $font-size-md2;
   font-weight: $font-weight-text2;
   color: rgba($color-light-2, 0.8);
   text-decoration: none;

@@ -1,13 +1,13 @@
 import React from 'react';
-import { Header } from '../../containers/Header/Header';
-import { useScreenSize } from '../../Hooks/useScreenSize';
-import { StandardForm } from '../../components/StandardForm/StandardForm';
-import { PrimaryTitle } from '../../components/PrimaryTitle/PrimaryTitle';
-import { PrimaryParagraph } from '../../components/PrimaryParagraph/PrimaryParagraph';
-import { StandardInput } from '../../components/StandardInput/StandardInput';
-import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton';
+import logo from '@images/koi_store_logo.png';
+import { Header } from '@containers/Header/Header';
+import { useScreenSize } from '@hooks/useScreenSize';
+import { StandardForm } from '@components/StandardForm/StandardForm';
+import { PrimaryTitle } from '@components/PrimaryTitle/PrimaryTitle';
+import { PrimaryParagraph } from '@components/PrimaryParagraph/PrimaryParagraph';
+import { StandardInput } from '@components/StandardInput/StandardInput';
+import { PrimaryButton } from '@components/PrimaryButton/PrimaryButton';
 import './CreateNewPasswd.scss';
-
 export function CreateNewPasswd() {
   /* A custom hook that returns the width of the screen. */
   const widthScreen = useScreenSize();
@@ -17,11 +17,7 @@ export function CreateNewPasswd() {
       {widthScreen > 768 && <Header idSection="6" />}
       <section className="new-passwd">
         <div className="new-passwd__form-container">
-          <img
-            src="./assets/images/koi_store_logo.png"
-            alt="Koi Store Logo"
-            className="new-passwd__logo"
-          />
+          <img src={logo} alt="Koi Store Logo" className="new-passwd__logo" />
 
           <div className="new-passwd__texts-container">
             <PrimaryTitle

@@ -1,6 +1,15 @@
 import React from 'react';
-import { NavigationRoutes } from '../Routes/Routes';
+import { AppContext } from '@context/AppContext';
+import { useShopping } from '@hooks/useShopping';
+import { NavigationRoutes } from '@routes/Routes';
 
 export default function App() {
-  return <NavigationRoutes />;
+  const shopping = useShopping();
+  return (
+    <>
+      <AppContext.Provider value={shopping}>
+        <NavigationRoutes />
+      </AppContext.Provider>
+    </>
+  );
 }

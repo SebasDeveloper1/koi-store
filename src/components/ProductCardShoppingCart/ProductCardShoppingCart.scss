@@ -1,11 +1,11 @@
-@import '../../styles/global';
+@import '@styles/global';
 
 .product-card-shopping-cart {
   display: flex;
   justify-content: space-between;
   align-items: center;
   inline-size: 100%;
-  block-size: auto;
+  block-size: 100%;
   padding: 8px;
   border: 1px solid $color-medium-2;
   border-radius: $border-radius-size;
